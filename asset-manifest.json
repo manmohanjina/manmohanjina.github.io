@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.fcb11eea.js",
+    "main.css": "/static/css/main.01dec6d8.css",
+    "main.js": "/static/js/main.89fb54fb.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/nordstorm.png": "/static/media/nordstorm.0b3fad9d81d84f71bfd4.png",
+    "static/media/user2.png": "/static/media/user2.d5e530e307fd0c29ef99.png",
+    "static/media/Manmohan_Jina_resume.pdf": "/static/media/Manmohan_Jina_resume.917dc51f989e700c8c47.pdf",
+    "static/media/recutie.png": "/static/media/recutie.646fe6ed8856912d5d29.png",
+    "static/media/gitcommit.png": "/static/media/gitcommit.ff532e7f0e7ef7781396.png",
+    "static/media/logo.png": "/static/media/logo.683dbaf38af7918db089.png",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.fcb11eea.js.map": "/static/js/main.fcb11eea.js.map",
+    "main.01dec6d8.css.map": "/static/css/main.01dec6d8.css.map",
+    "main.89fb54fb.js.map": "/static/js/main.89fb54fb.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.fcb11eea.js"
+    "static/css/main.01dec6d8.css",
+    "static/js/main.89fb54fb.js"
   ]
 }
