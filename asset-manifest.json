@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c95b669.css",
-    "main.js": "/static/js/main.61bff9ad.js",
+    "main.css": "/static/css/main.8c3f641a.css",
+    "main.js": "/static/js/main.c7598420.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/angelplace.png": "/static/media/angelplace.0406a33534f0967d63c5.png",
+    "static/media/img1.png": "/static/media/img1.f446100d3553af1b6ff5.png",
+    "static/media/medease.png": "/static/media/medease.f446100d3553af1b6ff5.png",
     "static/media/nordstorm.png": "/static/media/nordstorm.0b3fad9d81d84f71bfd4.png",
-    "static/media/user2.png": "/static/media/user2.d5e530e307fd0c29ef99.png",
+    "static/media/img3.png": "/static/media/img3.1c875d3f579d5dca7ce9.png",
+    "static/media/img2.png": "/static/media/img2.7e358e807dc8d7383254.png",
     "static/media/recutie.png": "/static/media/recutie.646fe6ed8856912d5d29.png",
+    "static/media/user2.png": "/static/media/user2.9ebe67e4cdcf359d9a06.png",
+    "static/media/img4.png": "/static/media/img4.98ce78183456192c4d73.png",
+    "static/media/img5.png": "/static/media/img5.85d877936b0da920a349.png",
     "static/media/Manmohan_Jina_resume.pdf": "/static/media/Manmohan_Jina_resume.8565aabde3e27ce20e38.pdf",
-    "static/media/gitcommit.png": "/static/media/gitcommit.ff532e7f0e7ef7781396.png",
     "static/media/logo.png": "/static/media/logo.683dbaf38af7918db089.png",
+    "static/media/thunder.png": "/static/media/thunder.e7f89c51cacb4fb9c726.png",
     "index.html": "/index.html",
-    "main.3c95b669.css.map": "/static/css/main.3c95b669.css.map",
-    "main.61bff9ad.js.map": "/static/js/main.61bff9ad.js.map",
+    "main.8c3f641a.css.map": "/static/css/main.8c3f641a.css.map",
+    "main.c7598420.js.map": "/static/js/main.c7598420.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c95b669.css",
-    "static/js/main.61bff9ad.js"
+    "static/css/main.8c3f641a.css",
+    "static/js/main.c7598420.js"
   ]
 }
