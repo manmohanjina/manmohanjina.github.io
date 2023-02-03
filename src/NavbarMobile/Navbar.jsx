@@ -11,18 +11,14 @@ import {
 import { useContext, useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import logo from "../img/logo.png";
+import logo1 from "../img/logo1.png";
 import { Link } from "react-scroll";
 import Manmohan_Jina_resume from "../resume/Manmohan_Jina_resume.pdf";
 import { booleanContext } from "../context/Boolean";
-import {SunIcon,MoonIcon} from "@chakra-ui/icons"
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 export default function Navbar() {
-
-
-
-const{toggle,state}=useContext(booleanContext)
-
+  const { toggle, state } = useContext(booleanContext);
 
   const toast = useToast();
 
@@ -66,7 +62,7 @@ const{toggle,state}=useContext(booleanContext)
     timerRef.current && clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/1Ad_jxJd79WzjLj6B4ODzJCSO7ZVh43pV/view?usp=share_link"
+        "https://drive.google.com/file/d/10rR7sbEEF9vfghU_8mRlxfjMMxVNEGBJ/view?usp=sharing"
       );
       console.log(timerRef.current, "2");
     }, 2000);
@@ -79,41 +75,46 @@ const{toggle,state}=useContext(booleanContext)
   }, [timerRef.current]);
 
   return (
-    <Box style={{zIndex:1}}
+    <Box
+      style={{ zIndex: 1 }}
       className={navref.current}
-     
       h="80px"
       sx={{
         position: "-webkit-sticky",
-       position: "sticky",
+        position: "sticky",
         top: "0",
       }}
     >
-      <Flex gap="20" alignItems={"center"}   >
-        <Box p="2">
+      <Flex gap="20" alignItems={"center"}>
+        <Box p="4">
           <Heading size="md" pl={10}>
             {" "}
-            <Image borderRadius={"50%"} width="80px" src={logo} />
+            <Image width="100%" src={logo1} />
           </Heading>
         </Box>
         <Spacer />
 
         <ButtonGroup
-        
           className={click ? "nav-menu active" : "nav-menu"}
           mr="100px"
           gap="2"
         >
-        <button onClick={toggle} >{state?<MoonIcon boxSize={6} />:<SunIcon boxSize={6} color="yellow"  />}</button>
-          
+          <button onClick={toggle}>
+            {state ? (
+              <SunIcon boxSize={6} color="orange.300" />
+            ) : (
+              <MoonIcon boxSize={6} color="gray.500" />
+            )}
+          </button>
+
           <Link to="home" spy={true} smooth={true} offset={50} duration={1000}>
-            <Button variant="outline" colorScheme="teal">
-              home
+            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+              HOME
             </Button>
           </Link>
           <Link to="about" spy={true} smooth={true} offset={50} duration={1000}>
-            <Button variant="outline" colorScheme="teal">
-              About
+            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+              ABOUT
             </Button>
           </Link>
           <Link
@@ -123,9 +124,9 @@ const{toggle,state}=useContext(booleanContext)
             offset={50}
             duration={1000}
           >
-            <Button variant="outline" colorScheme="teal">
+            <Button fontSize={"md"} variant={"ghost"} color="#1B9F97">
               {" "}
-              Projects
+              PROJECTS
             </Button>
           </Link>
           <Link
@@ -136,14 +137,22 @@ const{toggle,state}=useContext(booleanContext)
             duration={1000}
           >
             {" "}
-            <Button variant="outline" colorScheme="teal">
-              Contact
+            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+              CONTACT
             </Button>
           </Link>
 
-         <a href={Manmohan_Jina_resume} download="Manmohan_Jina_resume"  > <Button onClick={hadnelPdf} variant="outline" colorScheme="teal">
-            Resume
-          </Button></a>
+          <a href={Manmohan_Jina_resume} download="Manmohan_Jina_resume">
+            {" "}
+            <Button
+              fontSize={"md"}
+              onClick={hadnelPdf}
+              variant="ghost"
+              color="#1B9F97"
+            >
+              RESUME
+            </Button>
+          </a>
         </ButtonGroup>
       </Flex>
     </Box>

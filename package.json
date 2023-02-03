@@ -1,7 +1,5 @@
 {
   "homepage": "https://manmohanjina.github.io",
-
-
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -17,15 +15,19 @@
     "framer-motion": "^7.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-github-calendar": "^3.4.0",
     "react-icons": "^4.7.1",
+    "react-parallax-tilt": "^1.7.95",
+    "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
     "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

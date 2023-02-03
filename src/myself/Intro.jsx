@@ -8,6 +8,7 @@ import {
   useToast,
   useEditable,
   Center,
+  Highlight,
 } from "@chakra-ui/react";
 
 import user from "../img/user2.png";
@@ -20,7 +21,11 @@ import js from "../img/js.jpg";
 import html from "../img/html.png";
 import Type from "../typeCompo/Type";
 import ts3 from "../img/ts3.png";
-
+import thunder from "../img/thunder.png";
+import giticon from "../img/giticon.png";
+import tailwind from "../img/tailwind.png";
+import vscode from "../img/vscode.jpeg";
+import "./intro.css";
 import resume from "../resume/Manmohan_Jina_resume.pdf";
 import { useEffect, useRef } from "react";
 import { booleanContext } from "../context/Boolean";
@@ -28,6 +33,21 @@ import { useContext } from "react";
 
 export default function Intro() {
   const { toggle, state } = useContext(booleanContext);
+
+  const imgarr = [
+    redux2,
+    html,
+    css,
+    js,
+    react,
+    chakra,
+    thunder,
+    vscode,
+    giticon,
+    tailwind,
+    github,
+    ts3,
+  ];
 
   const toast = useToast();
 
@@ -50,7 +70,7 @@ export default function Intro() {
     timerRef.current && clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/1Ad_jxJd79WzjLj6B4ODzJCSO7ZVh43pV/view?usp=share_link"
+        "https://drive.google.com/file/d/10rR7sbEEF9vfghU_8mRlxfjMMxVNEGBJ/view?usp=sharing"
       );
     }, 2000);
   };
@@ -63,7 +83,7 @@ export default function Intro() {
 
   return (
     <>
-      <Box  bg={state? "#4A5568":"#B83280"} >
+      <Box bg={state ? "#051523" : "black"} w="full">
         <div className="firstbox">
           <Box mt="100px" id="home" className="type" m={"auto"}>
             {" "}
@@ -72,8 +92,8 @@ export default function Intro() {
           <Box m="auto">
             <Image
               className="userimg"
-              h="300px"
-              w="300px"
+              h="200px"
+              w="200px"
               borderRadius={"50%"}
               mt="20px"
               src={user}
@@ -81,7 +101,7 @@ export default function Intro() {
           </Box>
         </div>
 
-        <Box bg={state?"#4A5568":"#B83280"} textAlign="center" mt="-1px">
+        <Box bg={state ? "#051523" : "black"} textAlign="center" mt="-1px">
           <a href={resume} download>
             {" "}
             <Button
@@ -89,9 +109,9 @@ export default function Intro() {
               margin={"auto"}
               mb="10px"
               p={5}
-              colorScheme={state?"teal":"blackAlpha"}
-              variant={state?"ghost":"outline"}
-              fontWeight={state?"bold":"bolder"}
+              colorScheme={"whiteAlpha"}
+              fontWeight={state ? "bold" : "bolder"}
+              color={state ? "white" : "orange.300"}
               size="lg"
             >
               Resume
@@ -100,17 +120,22 @@ export default function Intro() {
         </Box>
       </Box>
 
-      <Box bg={state?"#CBD5E0":"#76E4F7"} mt={"-10px"}>
+      <Box bg={state ? "#051523" : "black"} mt={"-10px"} w="100%">
         <Box
           className="text"
-          width={["100%", "70%", "50%", "40%"]}
+          width={["80%", "70%", "50%", "70%"]}
           margin="auto"
           textAlign={"center"}
+          p="5%"
         >
-          <Heading mt="10px" p="10px"  color={state?"black":"yellow.200"} >
-            About, MySelf
+          <Heading mt="10px" color={state ? "red" : "yellow.200"} p={5}>
+            MYSELF
           </Heading>
-          <Text p="10px"  color={state?"black":"yellow.700"}  >
+          <Text
+            as={"b"}
+            fontSize={{ sm: "xl", base: "md", md: "xl", lg: "3xl" }}
+            color={state ? "#B0967B" : "orange.300"}
+          >
             Full Stack Web Developer skilled in MERN stack who focuses on
             writing clean, elegant and efficient code. I'm a passionate learner
             who's always willing to learn and work across technologies and
@@ -118,91 +143,45 @@ export default function Intro() {
             solve real-life problems
           </Text>
         </Box>
-        <Text color={state?"black":"yellow.200"}  fontSize={"4xl"} width={"100px"} margin="auto">
-          Skills
+        <Text
+          color={state ? "#B0967B" : "yellow.200"}
+          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+          margin="auto"
+          width={{ sm: "90%", base: "90%" }}
+          fontWeight={"bold"}
+          textAlign="center"
+          p={5}
+        >
+          <Highlight query={"SKILLS"} styles={{ color: "red" }}>
+            SKILLS & TOOLS
+          </Highlight>
         </Text>
 
-        <Center w="60%" m="auto"  mt='20px' >
+        <Center w={{ sm: "50%", base: "100%", lg: "30%" }} m="auto" mt="20px">
           <Grid
             className="img"
-            width={["100%", "70%", "50%", "50%"]}
             pb={"40px"}
             templateColumns={{
-              base: "repeat(2,1fr)",
+              base: "repeat(4,1fr)",
               md: "repeat(3,1fr)",
               lg: "repeat(4,1fr)",
             }}
             margin={"auto"}
             gap={10}
           >
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              width="100%"
-              src={html}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              width="100%"
-              src={css}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              width="100%"
-              src={js}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              src={react}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              src={redux2}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              src={github}
-            />
-            <Image
-              id="project"
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              src={chakra}
-            />
-            <Image
-              _hover={{
-                transition: "transform 0.2s",
-                transform: "scale(1.1)",
-              }}
-              borderRadius={"30%"}
-              src={ts3}
-            />
+            {imgarr.map((elm) => (
+              <Box className="map-img" key={elm}>
+                <Image
+                  // border={"10px solid red"}
+                  _hover={{
+                    transition: "transform 0.2s",
+                    transform: "scale(1.1)",
+                  }}
+                  borderRadius={"30%"}
+                  src={elm}
+                />
+              </Box>
+            ))}
           </Grid>
         </Center>
       </Box>
