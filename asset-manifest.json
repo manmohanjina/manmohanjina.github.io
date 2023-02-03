@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cab0bbf5.css",
-    "main.js": "/static/js/main.2f357ab9.js",
+    "main.css": "/static/css/main.14f806eb.css",
+    "main.js": "/static/js/main.834cc56d.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/angelplace.png": "/static/media/angelplace.0406a33534f0967d63c5.png",
     "static/media/img1.png": "/static/media/img1.f446100d3553af1b6ff5.png",
@@ -14,15 +14,15 @@
     "static/media/img4.png": "/static/media/img4.98ce78183456192c4d73.png",
     "static/media/img5.png": "/static/media/img5.85d877936b0da920a349.png",
     "static/media/Manmohan_Jina_resume.pdf": "/static/media/Manmohan_Jina_resume.8565aabde3e27ce20e38.pdf",
-    "static/media/logo.png": "/static/media/logo.683dbaf38af7918db089.png",
+    "static/media/logo1.png": "/static/media/logo1.e323fa0176d37617deb9.png",
     "static/media/thunder.png": "/static/media/thunder.e7f89c51cacb4fb9c726.png",
     "index.html": "/index.html",
-    "main.cab0bbf5.css.map": "/static/css/main.cab0bbf5.css.map",
-    "main.2f357ab9.js.map": "/static/js/main.2f357ab9.js.map",
+    "main.14f806eb.css.map": "/static/css/main.14f806eb.css.map",
+    "main.834cc56d.js.map": "/static/js/main.834cc56d.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cab0bbf5.css",
-    "static/js/main.2f357ab9.js"
+    "static/css/main.14f806eb.css",
+    "static/js/main.834cc56d.js"
   ]
 }
