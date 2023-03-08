@@ -12,6 +12,7 @@ import { useContext, useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import logo1 from "../img/logo1.png";
+import logo_2 from "../img/logo_2.png";
 import { Link } from "react-scroll";
 import Manmohan_Jina_resume from "../resume/Manmohan_Jina_resume.pdf";
 import { booleanContext } from "../context/Boolean";
@@ -32,21 +33,22 @@ export default function Navbar() {
   const navref = useRef();
   navref.current = navbg;
 
-  useEffect(() => {
-    const handelScroll = () => {
-      const show = window.scrollY > 310;
-      if (show) {
-        setNavbg("appearsolid");
-      } else {
-        setNavbg("appeartransparent");
-      }
-    };
+  const handelScroll = () => {
+    const show = window.scrollY > 310;
+    if (show) {
+      setNavbg("appearsolid");
+    } else {
+      setNavbg("appeartransparent");
+    }
+  };
 
+  useEffect(() => {
     document.addEventListener("scroll", handelScroll);
+    // console.log("hadnl scroll");
     return () => {
       document.removeEventListener("scroll", handelScroll);
     };
-  }, []);
+  }, [navbg]);
   const hadnelPdf = () => {
     if (!toast.isActive(id)) {
       toast({
@@ -60,11 +62,9 @@ export default function Navbar() {
     }
 
     timerRef.current && clearTimeout(timerRef.current);
+
     timerRef.current = setTimeout(() => {
-      window.open(
-        "https://drive.google.com/file/d/10rR7sbEEF9vfghU_8mRlxfjMMxVNEGBJ/view?usp=sharing"
-      );
-      console.log(timerRef.current, "2");
+      window.open("https://drive.google.com/file/d/11Xl7eEzYIBwgvGdBo1-nnR0otZhcCsvi/view?usp=sharing");
     }, 2000);
   };
 
@@ -72,12 +72,13 @@ export default function Navbar() {
     return () => {
       clearTimeout(timerRef.current);
     };
-  }, [timerRef.current]);
+  }, [hadnelPdf]);
 
   return (
     <Box
       style={{ zIndex: 1 }}
       className={navref.current}
+      bg={state ? "#051523 " : "#6883bc"}
       h="80px"
       sx={{
         position: "-webkit-sticky",
@@ -89,7 +90,7 @@ export default function Navbar() {
         <Box p="4">
           <Heading size="md" pl={10}>
             {" "}
-            <Image width="100%" src={logo1} />
+            <Image width="100%" src={state ? logo1 : logo_2} />
           </Heading>
         </Box>
         <Spacer />
@@ -103,18 +104,43 @@ export default function Navbar() {
             {state ? (
               <SunIcon boxSize={6} color="orange.300" />
             ) : (
-              <MoonIcon boxSize={6} color="gray.500" />
+              <MoonIcon boxSize={6} color="white" />
             )}
           </button>
 
-          <Link to="home" spy={true} smooth={true} offset={50} duration={1000}>
-            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+          <Link to="homei" spy={true} smooth={true} offset={50} duration={1000}>
+            <Button
+              fontSize={"md"}
+              variant="ghost"
+              color={state ? "#1B9F97" : "black"}
+            >
               HOME
             </Button>
           </Link>
           <Link to="about" spy={true} smooth={true} offset={50} duration={1000}>
-            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+            <Button
+              fontSize={"md"}
+              variant="ghost"
+              color={state ? "#1B9F97" : "black"}
+            >
               ABOUT
+            </Button>
+          </Link>
+
+          <Link
+            to="skill"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={1000}
+          >
+            <Button
+              fontSize={"md"}
+              variant={"ghost"}
+              color={state ? "#1B9F97" : "black"}
+            >
+              {" "}
+              SKILLS
             </Button>
           </Link>
           <Link
@@ -124,11 +150,19 @@ export default function Navbar() {
             offset={50}
             duration={1000}
           >
-            <Button fontSize={"md"} variant={"ghost"} color="#1B9F97">
+            <Button
+              fontSize={"md"}
+              variant={"ghost"}
+              color={state ? "#1B9F97" : "black"}
+            >
               {" "}
               PROJECTS
             </Button>
           </Link>
+
+         
+
+
           <Link
             to="contact"
             spy={true}
@@ -137,18 +171,23 @@ export default function Navbar() {
             duration={1000}
           >
             {" "}
-            <Button fontSize={"md"} variant="ghost" color="#1B9F97">
+            <Button
+              fontSize={"md"}
+              variant="ghost"
+              color={state ? "#1B9F97" : "black"}
+            >
               CONTACT
             </Button>
           </Link>
 
-          <a href={Manmohan_Jina_resume} download="Manmohan_Jina_resume">
+          <a href={Manmohan_Jina_resume} download="fw_18_0455_Manmohan_Jina_resume">
             {" "}
             <Button
               fontSize={"md"}
               onClick={hadnelPdf}
               variant="ghost"
-              color="#1B9F97"
+              color={state ? "#1B9F97" : "black"}
+              id="home"
             >
               RESUME
             </Button>

@@ -9,6 +9,8 @@ import {
   useEditable,
   Center,
   Highlight,
+  Flex,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 import user from "../img/user2.png";
@@ -30,6 +32,11 @@ import resume from "../resume/Manmohan_Jina_resume.pdf";
 import { useEffect, useRef } from "react";
 import { booleanContext } from "../context/Boolean";
 import { useContext } from "react";
+import { RiGithubFill } from "react-icons/ri";
+import { ImLinkedin2 } from "react-icons/im";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Intro() {
   const { toggle, state } = useContext(booleanContext);
@@ -80,28 +87,76 @@ export default function Intro() {
       clearTimeout(timerRef.current);
     };
   }, [timerRef.current]);
+  const [isSmaller] = useMediaQuery("(min-width: 1200px)");
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   return (
     <>
-      <Box bg={state ? "#051523" : "black"} w="full">
+      <Box id="homei" bg={state ? "#051523" : "#79a7d3"} w="100%">
+        {isSmaller ? (
+          <Flex
+            justifyContent={"space-evenly"}
+            alignItems="center"
+            h="20%"
+            zIndex={1}
+            position="fixed"
+            top="60%"
+            left="1%"
+            flexDirection={"column"}
+          >
+            <a href="https://github.com/manmohanjina " target={"_blank"}>
+              {""}
+              <Button
+                border={state ? "2px solid red" : "2px solid black"}
+                borderRadius="50%"
+                variant={"ghost"}
+                p={-1}
+              >
+                <RiGithubFill color={state ? "red" : "black"} size="100%" />
+              </Button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/manmohan-jina-6a43a6260/"
+              target={"_blank"}
+            >
+              <Button
+                p={1}
+                overflow="hidden"
+                border={state ? "2px solid red" : "2px solid black"}
+                variant={"ghost"}
+                borderRadius="50%"
+              >
+                <ImLinkedin2 size="full" color={state ? "red" : "black"} />
+              </Button>
+            </a>
+          </Flex>
+        ) : null}
+
         <div className="firstbox">
-          <Box mt="100px" id="home" className="type" m={"auto"}>
+          <Box mt="100px" className="type" m={"auto"}>
             {" "}
             <Type />
           </Box>
-          <Box m="auto">
+          <Box
+            data-aos="flip-up"
+            data-aos-anchor-placement="top-center"
+            m="auto"
+            p={10}
+            borderRadius={5}
+          >
             <Image
               className="userimg"
-              h="200px"
-              w="200px"
-              borderRadius={"50%"}
+              h={{ base: "250px", md: "300px", lg: "300px" }}
               mt="20px"
+              borderRadius={"8%"}
               src={user}
             />
           </Box>
         </div>
 
-        <Box bg={state ? "#051523" : "black"} textAlign="center" mt="-1px">
+        <Box bg={state ? "#051523" : "#79a7d3"} textAlign="center" mt="-1px">
           <a href={resume} download>
             {" "}
             <Button
@@ -109,9 +164,9 @@ export default function Intro() {
               margin={"auto"}
               mb="10px"
               p={5}
-              colorScheme={"whiteAlpha"}
+              colorScheme={state ? "whiteAlpha" : "blackAlpha"}
               fontWeight={state ? "bold" : "bolder"}
-              color={state ? "white" : "orange.300"}
+              color={state ? "white" : "#28324B"}
               size="lg"
             >
               Resume
@@ -120,21 +175,17 @@ export default function Intro() {
         </Box>
       </Box>
 
-      <Box bg={state ? "#051523" : "black"} mt={"-10px"} w="100%">
-        <Box
-          className="text"
-          width={["80%", "70%", "50%", "70%"]}
-          margin="auto"
-          textAlign={"center"}
-          p="5%"
-        >
-          <Heading mt="10px" color={state ? "red" : "yellow.200"} p={5}>
+      <Box bg={state ? "#051523" : "#79a7d3"} mt={"-10px"} w="100%">
+        <Box className="text" margin="auto" textAlign={"center"} p="5%">
+          <Heading mt="10px" color={state ? "red" : "black"} p={5}>
             MYSELF
           </Heading>
           <Text
             as={"b"}
             fontSize={{ sm: "xl", base: "md", md: "xl", lg: "3xl" }}
-            color={state ? "#B0967B" : "orange.300"}
+            color={state ? "#B0967B" : "black"}
+            fontFamily={"sans-serif"}
+            id="skill"
           >
             Full Stack Web Developer skilled in MERN stack who focuses on
             writing clean, elegant and efficient code. I'm a passionate learner
@@ -144,7 +195,8 @@ export default function Intro() {
           </Text>
         </Box>
         <Text
-          color={state ? "#B0967B" : "yellow.200"}
+          id="skills"
+          color={state ? "#B0967B" : "#322514"}
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           margin="auto"
           width={{ sm: "90%", base: "90%" }}
@@ -152,22 +204,30 @@ export default function Intro() {
           textAlign="center"
           p={5}
         >
-          <Highlight query={"SKILLS"} styles={{ color: "red" }}>
+          <Highlight
+            query={"SKILLS"}
+            styles={{ color: state ? "red" : "#322514" }}
+          >
             SKILLS & TOOLS
           </Highlight>
         </Text>
 
-        <Center w={{ sm: "50%", base: "100%", lg: "30%" }} m="auto" mt="20px">
+        <Center
+          _hover={{ cursor: "pointer" }}
+          w={{ base: "70%", md: "50%", lg: "50%" }}
+          m="auto"
+          mt="20px"
+        >
           <Grid
             className="img"
             pb={"40px"}
             templateColumns={{
-              base: "repeat(4,1fr)",
+              base: "repeat(3,1fr)",
               md: "repeat(3,1fr)",
-              lg: "repeat(4,1fr)",
+              lg: "repeat(6,1fr)",
             }}
             margin={"auto"}
-            gap={10}
+            gap={{ base: "5", md: "9", lg: "10" }}
           >
             {imgarr.map((elm) => (
               <Box className="map-img" key={elm}>

@@ -55,44 +55,8 @@ export default function Githubstat() {
 
   return (
     <>
-      {/* <Center className="github-stat" bg={state?'#7CC0AD':"black"}      >
-    
-<Box   mt='50px' mb={'50px'} display={'flex'} gap={10}  m='30px' p='30px'  alignItems={'center'}  justifyContent='space-evenly' w='full' className="github-stat"  >
-  <Box    data-aos='flip-up' data-aos-anchor-placement="top-center" >
-  <Image  src='https://github-readme-streak-stats.herokuapp.com/?user=manmohanjina&' />
-  </Box>
-
-  <Box   w={[300,200,500]} className="middle-box"   data-aos='fade-up' >
-    <Image  className="imutable" w='full'  h="170px" src='https://github-readme-stats.vercel.app/api/top-langs?username=manmohanjina&show_icons=true&locale=en&layout=compact'  />
-</Box>
-
-  <Box    data-aos='flip-right' >
-    <Image   src='https://github-readme-stats.vercel.app/api?username=manmohanjina&show_icons=true&locale=en'/>
-  </Box>
-</Box>
-
-  <Box w={[300, 400, 1000]} m="auto" mt="20px" mb={"20px"}>
-        <GitHubCalendar
-          username="manmohanjina"
-          blockSize={25}
-          color={state ? "" : "orange"}
-        />
-      </Box>  
-      
-      <Box w="70%" className="main-box-project">
-        <Stack
-          gap="5%"
-          alignItems="center"
-          margin={"auto"}
-          direction={{ base: "column", md: "row" }}
-          boxShadow={"2xl"}
-          w={{ sm: "100%", md: "540px" }}
-        >
-
-
-
-</Center> */}
-      <Box className="github-stat1" bg={state ? "#04101B" : "black"}>
+     
+      <Box className="github-stat1" bg={state ? "#04101B" : "#79a7d3"}>
         <Box
           data-aos="flip-up"
           data-aos-anchor-placement="top-center"
@@ -100,7 +64,7 @@ export default function Githubstat() {
           p={10}
         >
           <Text
-            color={"#B0967B"}
+            color={state ? "#B0967B" : "black"}
             as={"b"}
             fontSize={{ sm: "xl", base: "2xl", lg: "5xl" }}
           >
@@ -111,7 +75,10 @@ export default function Githubstat() {
             color={"#B0967B"}
             fontSize={{ sm: "xl", base: "2xl", lg: "3xl" }}
           >
-            <Highlight query={"CONTRIBUTION"} styles={{ color: "red" }}>
+            <Highlight
+              query={"CONTRIBUTION"}
+              styles={{ color: state ? "red" : "black" }}
+            >
               MY OVERALL CONTRIBUTION
             </Highlight>
           </Text>
@@ -136,9 +103,16 @@ export default function Githubstat() {
             data-aos="flip-up"
             data-aos-anchor-placement="top-center"
           >
-            <Text fontSize={{ lg: "4xl" }} as="b" color={"#B0967B"}>
+            <Text
+              fontSize={{ lg: "4xl" }}
+              as="b"
+              color={state ? "#B0967B" : "black"}
+            >
               {" "}
-              <Highlight query="CALENDER" styles={{ color: "red" }}>
+              <Highlight
+                query="CALENDER"
+                styles={{ color: state ? "red" : "black" }}
+              >
                 GITHUB CONTRIBUTION CALENDER
               </Highlight>
             </Text>
@@ -149,13 +123,13 @@ export default function Githubstat() {
               <Box
                 w={{ sm: "100%", md: "100%", lg: "90%" }}
                 className="github-stat"
-                color={"#B0967B"}
+                color={state ? "#B0967B" : "black"}
                 p={5}
               >
                 <GitHubCalendar
                   username="manmohanjina"
                   blockSize={25}
-                  color={state ? "#B0967B" : "orange"}
+                  color={state ? "#B0967B" : "black"}
                   blockRadius={5}
                   blockMargin={15}
                   fontSize={15}

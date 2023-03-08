@@ -1,36 +1,19 @@
-import {
-  ChevronDownIcon,
-  HamburgerIcon,
-  CloseIcon,
-  SunIcon,
-  MoonIcon,
-} from "@chakra-ui/icons";
-import {
-  Link,
-  Flex,
-  RadioGroup,
-  Stack,
-  Radio,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-  useToast,
-} from "@chakra-ui/react";
-import { useDisclosure, Box } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { useContext } from "react";
-import { useRef } from "react";
+import { Box, Button, useToast } from "@chakra-ui/react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { AiTwotoneFire } from "react-icons/ai";
+import { BsFillSunFill, BsMoonStarsFill, BsPersonCircle } from "react-icons/bs";
+import { FcContacts, FcHome } from "react-icons/fc";
+import { GrProjects } from "react-icons/gr";
 import { booleanContext } from "../context/Boolean";
+import Manmohan_Jina_resume from "../resume/Manmohan_Jina_resume.pdf";
+import "./navmobile.css";
+
 export default function NavbarMobile() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [placement, setPlacement] = React.useState("right");
   const btnRef = useRef(null);
 
   const toast = useToast();
 
-  const { state, toggle } = useContext(booleanContext);
+  const { state, toggle, Than800 } = useContext(booleanContext);
 
   const timerRef = useRef(null);
 
@@ -52,9 +35,8 @@ export default function NavbarMobile() {
 
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/10rR7sbEEF9vfghU_8mRlxfjMMxVNEGBJ/view?usp=sharing"
+        "https://drive.google.com/file/d/11Xl7eEzYIBwgvGdBo1-nnR0otZhcCsvi/view?usp=sharing"
       );
-      console.log(timerRef.current, "2");
     }, 2000);
   };
 
@@ -64,106 +46,103 @@ export default function NavbarMobile() {
     };
   }, [timerRef.current]);
 
+  const iconarr = [
+    {
+      id: 0,
+      el: state ? (
+        <BsFillSunFill size={"90%"} />
+      ) : (
+        <BsMoonStarsFill size={"90%"} />
+      ),
+    },
+
+    { id: 1, el: <FcHome size={"100%"} /> },
+    { id: 2, el: <AiTwotoneFire size={"90%"} /> },
+    { id: 5, el: <GrProjects size={"100%"} /> },
+    { id: 4, el: <BsPersonCircle size={"90%"} /> },
+
+    { id: 3, el: <FcContacts size={"100%"} /> },
+  ];
+
+  var prevScrollpos = window.pageYOffset;
+
+  function scroll() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.bottom = "-0";
+    } else if (!Than800) {
+      document.getElementById("navbar").style.bottom = "-200px";
+      document.getElementById("navbar").style.transition = "0.7s";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+
+  const [a, setA] = useState("");
+
+  function handelBtn(id) {
+    if (id == 0) {
+      toggle();
+    } else if (id == 3) {
+      setA("down");
+      hadnelPdf();
+    } else if (id == 1) {
+      setA("#home");
+    } else if (id == 2) {
+      setA("#skills");
+    } else if (id == 4) {
+      setA("#contact");
+    } else if (id == 5) {
+      setA("#projects");
+    }
+  }
+
   return (
     <Box
-      style={{ zIndex: 1 }}
-      display={"flex"}
-      bg="blackAlpha.600"
-      justifyContent="space-between"
-      p="2%"
-      sx={{
-        position: "-webkit-sticky",
-        /* Safari */ position: "sticky",
-        top: "0",
-      }}
+      bg={state ? "#B0967B" : "black"}
+      w={{ sm: "100%", base: "100%", md: "100%", lg: "100%" }}
+      h={{ sm: "90px", md: "80px", base: "50px", lg: "80px" }}
+      className="navmobile"
+      id="navbar"
     >
-      <h1 style={{ color: "white", padding: "10px" }}>Manmohan</h1>
-      <button style={{ paddingLeft: "40%" }} onClick={toggle}>
-        {state ? (
-          <MoonIcon boxSize={6} />
-        ) : (
-          <SunIcon color={"yellow"} boxSize={6} />
-        )}
-      </button>
-      <Button colorScheme="blue" onClick={onOpen}>
-        <Box display={"flex"} w="full">
-          <HamburgerIcon p={1} h={"60px"} width={"100%"} />
-        </Box>
-      </Button>
-
-      <Drawer
-        width="10px"
-        finalFocusRef={btnRef}
-        placement={placement}
-        onClose={onClose}
-        isOpen={isOpen}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerBody>
-            <Box ml="130px" mt="20px">
-              <button
-                style={{ marginLeft: "120px", marginTop: "-40px" }}
-                onClick={onClose}
+      {iconarr.map((elm) => {
+        return (
+          <Button
+            className="mapbtn"
+            id="btn"
+            mt={{ sm: "0", base: "-5px", md: "0" }}
+            h={{
+              sm: "80px",
+              base: "60px",
+              md: "70px",
+              lg: "60px",
+            }}
+            display="flex"
+            border="1px solid teal"
+            alignItems={"center"}
+            key={elm.id}
+            position="-webkit-sticky"
+            onClick={() => handelBtn(elm.id)}
+            variant={state ? "solid" : "ghost"}
+            bg={state ? "white" : "blue.100"}
+            borderRadius={{ sm: "50%", base: "50%", md: "10%" }}
+            mb="5px"
+          >
+            {elm.id !== 3 ? (
+              <a  href={elm.id == 0 ? null : a}>
+                {elm.el}
+              </a>
+            ) : (
+              <a
+                
+                href={Manmohan_Jina_resume}
+                download="Manmohan_Jina_resume"
               >
-                <CloseIcon />
-              </button>
-            </Box>
-            <Box
-              display={"flex"}
-              width={"80%"}
-              flexDirection="column"
-              gap={10}
-              justifyContent="center"
-              alignItems={"center"}
-              mt="50px"
-            >
-              <a href="#home">
-                <Button colorScheme="blackAlpha" onClick={onClose}>
-                  Home
-                </Button>
+                {elm.el}
               </a>
-              <a href="#project">
-                <Button
-                  varient="outline"
-                  colorScheme="blackAlpha"
-                  onClick={onClose}
-                >
-                  Project
-                </Button>
-              </a>
-              <a href="#about">
-                <Button
-                  varient="outline"
-                  colorScheme="blackAlpha"
-                  onClick={onClose}
-                >
-                  About
-                </Button>
-              </a>
-              <a href="#contact">
-                <Button
-                  varient="outline"
-                  colorScheme="blackAlpha"
-                  onClick={onClose}
-                >
-                  Contact
-                </Button>
-              </a>
-              <a href="#resume">
-                <Button
-                  varient="outline"
-                  colorScheme="blackAlpha"
-                  onClose={onClose}
-                  onClick={hadnelPdf}
-                >
-                  Resume
-                </Button>
-              </a>
-            </Box>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+            )}
+          </Button>
+        );
+      })}
     </Box>
   );
 }

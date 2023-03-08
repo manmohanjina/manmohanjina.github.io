@@ -19,6 +19,7 @@ code {
   font-size: 40px;
   color: #b1977c;
   font-style: italic;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .text{
@@ -97,7 +98,10 @@ code {
 }
 
 .appeartransparent{
-  background:#051523
+   background:#051523 
+
+
+
 }
 .appearsolid{
   background-color: #051523;

@@ -19,6 +19,7 @@ function App() {
       <Box id="about"></Box>
 
       <Box>
+       
         {isSmallerThan800 ? <Navbar /> : <NavbarMobile />}
         <Intro />
 

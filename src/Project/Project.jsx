@@ -61,8 +61,8 @@ export default function Project() {
         <SiJavascript size={"40%"} />,
       ],
       projectImg: nordstorm,
-      desc: "  A Website build bridge between Recuuiter and Recruitee  Manupulating of data much eaiser ,hassel fre Work nice to have  this kind of site to manage employee",
-      projectLink: "",
+      desc: "Clone of Nordstorm we created at very begining of our learning phase , it's an ecommerce website suitable for every age group so they can select clothing for themself or for there loved ones.",
+      projectLink: "https://gleaming-lamington-419754.netlify.app/",
       projectGithub: "https://github.com/Devender0014/NordStrom",
     },
     {
@@ -113,14 +113,19 @@ export default function Project() {
 
   return (
     <>
-      <HStack id="project" className="project-main-c" flexDirection="column">
-        <Box w={{ sm: "100%", base: "80%", md: "100%" }}>
+      <HStack
+        id="projects"
+        className="project-main-c"
+        flexDirection="column"
+        bg={state ? "#051523" : "#79a7d3"}
+      >
+        <Box id="project" w={{ sm: "100%", base: "80%", md: "100%" }}>
           <Text
             align={"center"}
             alignItems={"center"}
             fontSize={{ base: "3xl", sm: "4xl", md: "4xl" }}
             fontWeight={"semibold"}
-            color={"#B0967B"}
+            color={state ? "#B0967B" : "black"}
             p={10}
           >
             <Highlight query={"CREATIVE"} styles={{ color: "red" }}>
@@ -128,20 +133,31 @@ export default function Project() {
             </Highlight>
           </Text>
         </Box>
-
+        {/* #6883BC */}
+        {/* #79A7D3 */}
         {isSmaller ? (
-          <Box className="outside-map-box">
+          <Box
+            className="outside-map-box"
+            display={"flex"}
+            flexDirection="column"
+            gap={"10"}
+          >
             {projectArr.map((elm) => {
               return (
-                <Box key={elm.projectName} className="inside-map-stack">
-                  <HStack gap={20}>
+                <Box
+                  key={elm.projectName}
+                  className="inside-map-stack"
+                  bg={state ? "#0D1C2E" : "#6883bc"}
+                  data-aos="ease-out-cubic"
+                >
+                  <HStack>
                     <Box
                       width={{ sm: "100%", base: "80%", lg: "70%" }}
                       mt="30px"
                     >
                       <Image
                         p={5}
-                        border="5px solid #B0967B"
+                        border={state ? "5px solid #B0967B" : "5px solid white"}
                         src={elm.projectImg}
                       />
                     </Box>
@@ -151,21 +167,35 @@ export default function Project() {
                       m="30px"
                       gap={15}
                     >
-                      <Text color={"#B0967B"} as="b" fontSize={"3xl"}>
+                      <Text
+                        color={state ? "#B0967B" : "black"}
+                        as="u"
+                        fontSize={"3xl"}
+                      >
                         {elm.projectName}
                       </Text>
-                      <Text color={"#B0967B"} as="b" fontSize={"xl"}>
+                      <Text
+                        data-aos="fade-right"
+                        color={state ? "#B0967B" : "black"}
+                        fontSize={"xl"}
+                        fontFamily={"sans-serif"}
+                      >
                         {elm.desc}
                       </Text>
                       <HStack justifyContent={"space-evenly"}>
-                        <Text fontSize={"xl"} as="b" color={"white"}>
+                        <Text
+                          fontSize={"xl"}
+                          as="b"
+                          color={state ? "white" : "black"}
+                          fontFamily={"sans-serif"}
+                        >
                           Tech-Stack
                         </Text>
                         <HStack
                           data-aos="fade-right"
-                          data-aos-anchor-placement="top-center"
+                          data-aos-anchor-placement="top"
                           w="full"
-                          color={"#B0967B"}
+                          color={state ? "#B0967B" : "black"}
                         >
                           {elm.techImg.map((elm) => (
                             <div key={elm.type}>{elm}</div>
@@ -183,7 +213,7 @@ export default function Project() {
                   >
                     <Box display={"flex"} justifyContent="space-evenly" w="30%">
                       <Box w="30%">
-                        <a href={elm.projectLink}>
+                        <a href={elm.projectLink} target={"_blank"}>
                           {" "}
                           <Button
                             w="full"
@@ -202,7 +232,7 @@ export default function Project() {
                       </Box>
                       <Box w="30%">
                         {" "}
-                        <a href={elm.projectGithub}>
+                        <a href={elm.projectGithub} target={"_blank"}>
                           {" "}
                           <Button
                             onClick={() => <Link to={elm.projectGithub} />}
@@ -227,7 +257,7 @@ export default function Project() {
             })}
           </Box>
         ) : (
-          <Center bg="#051523">
+          <Center bg={state ? "#0D1C2E" : "#79A7D3"}>
             <Box
               className="project-main-box"
               w={{ sm: "100%", base: "80%", md: "100%" }}
@@ -248,6 +278,7 @@ export default function Project() {
                       key={elm.projectName}
                       className="project-grid-container"
                       m="auto"
+                      bg={state ? "#0D1C2E" : "#6883BC"}
                     >
                       <GridItem w={{ sm: "100%", md: "100%", lg: "100%" }}>
                         <Box
@@ -257,7 +288,9 @@ export default function Project() {
                           align="center"
                         >
                           <Image
-                            border={"5px solid white"}
+                            border={
+                              state ? " 5px solid #AB9379" : "5px solid white"
+                            }
                             p={5}
                             src={elm.projectImg}
                           />
@@ -269,14 +302,18 @@ export default function Project() {
                         >
                           <Text
                             as={"b"}
-                            color={"#B0967B"}
+                            color={state ? "#B0967B" : "black"}
                             fontSize={{ base: "3xl", sm: "4xl", md: "4xl" }}
                           >
                             {elm.projectName}
                           </Text>
                         </Box>
                         <Box p={5}>
-                          <Text as={"b"} fontStyle={"italic"} color="gray.100">
+                          <Text
+                            as={"b"}
+                            fontStyle={"italic"}
+                            color={state ? "gray.100" : "black"}
+                          >
                             {" "}
                             {elm.desc}
                           </Text>
@@ -287,7 +324,7 @@ export default function Project() {
                           m="auto"
                           justifyContent={"space-around"}
                           p={5}
-                          color={"#B0967B"}
+                          color={state ? "#B0967B" : "black"}
                           gap={3}
                         >
                           <Text as={"b"}>Tech stack</Text>
@@ -299,7 +336,7 @@ export default function Project() {
                         </HStack>
                       </GridItem>
                       <HStack justifyContent={"center"} p={5} gap="10px">
-                        <a href={elm.projectLink}>
+                        <a href={elm.projectLink} target="_blank">
                           <Button
                             color={"blue.500"}
                             _hover={{ bg: "white", color: "orange" }}

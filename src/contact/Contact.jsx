@@ -35,10 +35,13 @@ export default function Contact() {
   const { toggle, state } = useContext(booleanContext);
 
   return (
-    <Box className="main-cont-contact" id='contact' >
+    <Box
+      className="main-cont-contact"
+      id="contact"
+      bg={state ? "#051523" : "#79a7d3"}
+    >
       <Container
-        id="contact"
-        bg={state ? "#051523" : "black"}
+        bg={state ? "#051523" : "#6883bc"}
         maxW="full"
         mt={0}
         centerContent
@@ -46,7 +49,7 @@ export default function Contact() {
       >
         <Flex className="flex-contact">
           <Box
-            bg={!state ? "orange.300" : "#0D1C2E"}
+            bg={!state ? "#6883bc" : "#0D1C2E"}
             color="white"
             borderRadius="lg"
             m={{ sm: 4, md: 16, lg: 10 }}
@@ -55,21 +58,33 @@ export default function Contact() {
             <Box p={4}>
               <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
                 <WrapItem>
-                  <Box color={"#b1977c"}>
+                  <Box color={state ? "#b1977c" : "black"}>
                     <Heading>Contact</Heading>
-                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="#b1977c">
+                    <Text
+                      mt={{ sm: 3, md: 3, lg: 5 }}
+                      color={state ? "#b1977c" : "black"}
+                    >
                       Fill up the form below to contact
                     </Text>
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                      <VStack pl={0} spacing={3} alignItems="flex-start">
+                      <VStack spacing={3} alignItems="flex-start">
                         <Button
                           size="md"
                           height="48px"
                           width="200px"
                           variant="ghost"
-                          color="#b1977c"
-                          _hover={{ border: "2px solid #b1977c" }}
-                          leftIcon={<MdPhone color="#b1977c" size="20px" />}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{
+                            border: state
+                              ? "2px solid #b1977c"
+                              : "2px solid black",
+                          }}
+                          leftIcon={
+                            <MdPhone
+                              color={state ? "#b1977c" : "black"}
+                              size="20px"
+                            />
+                          }
                         >
                           +91-8650003502
                         </Button>
@@ -78,9 +93,18 @@ export default function Contact() {
                           height="60px"
                           width="270px"
                           variant="ghost"
-                          color="#b1977c"
-                          _hover={{ border: "2px solid #b1977c" }}
-                          leftIcon={<MdEmail color="#b1977c" size="20px" />}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{
+                            border: state
+                              ? "2px solid #b1977c"
+                              : "2px solid black",
+                          }}
+                          leftIcon={
+                            <MdEmail
+                              color={state ? "#b1977c" : "black"}
+                              size="20px"
+                            />
+                          }
                         >
                           Manish63singh@gmail.com
                         </Button>
@@ -89,10 +113,17 @@ export default function Contact() {
                           height="48px"
                           width="200px"
                           variant="ghost"
-                          color="#b1977c"
-                          _hover={{ border: "2px solid #b1977c" }}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{
+                            border: state
+                              ? "2px solid #b1977c"
+                              : "2px solid black",
+                          }}
                           leftIcon={
-                            <MdLocationOn color="#b1977c" size="20px" />
+                            <MdLocationOn
+                              color={state ? "#b1977c" : "black"}
+                              size="20px"
+                            />
                           }
                         >
                           Kashipur,Uttrakhand
@@ -112,8 +143,8 @@ export default function Contact() {
                           size="lg"
                           bg={"white"}
                           isRound={true}
-                          color="#b1977c"
-                          _hover={{ bg: "#0E9D97" }}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{ bg: state ? "#0E9D97" : "blue.300" }}
                           icon={<MdMail size="28px" />}
                         />
                       </a>
@@ -124,8 +155,8 @@ export default function Contact() {
                           size="lg"
                           isRound={true}
                           bg="white"
-                          color="#b1977c"
-                          _hover={{ bg: "#0E9D97" }}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{ bg: state ? "#0E9D97" : "blue.300" }}
                           icon={<BsGithub size="28px" />}
                         />
                       </a>
@@ -140,8 +171,8 @@ export default function Contact() {
                           size="lg"
                           isRound="true"
                           bg="white"
-                          color="#b1977c"
-                          _hover={{ bg: "#0E9D97" }}
+                          color={state ? "#b1977c" : "black"}
+                          _hover={{ bg: state ? "#0E9D97" : "blue.300" }}
                           icon={<BsLinkedin size="28px" />}
                         />
                       </a>
@@ -149,11 +180,14 @@ export default function Contact() {
                   </Box>
                 </WrapItem>
                 <WrapItem>
-                  <Box borderRadius="lg" bg="blackAlpha.100">
+                  <Box borderRadius="lg" bg={state ? "" : "#6883BC"}>
                     <Box m={8} color="light">
                       <VStack spacing={5}>
                         <form
                           className="form-start"
+                          style={{
+                            backgroundColor: state ? "#0D1C2E" : "#6883BC",
+                          }}
                           action="https://getform.io/f/28e2829c-ed3f-4f52-bd11-a45939127df0"
                           method="POST"
                         >
@@ -161,25 +195,32 @@ export default function Contact() {
                             type="text"
                             name="name"
                             placeholder="Enter Your Name Please"
+                            bg={state ? "#051523" : "white"}
+                            color={state ? "red" : "blue.400"}
                           />
                           <Input
                             type="text"
                             name="email"
                             placeholder="Enter Your E-mail Please"
                             className="input-email"
+                            bg={state ? "#051523" : "white"}
+                            color={state ? "red" : "blue.400"}
                           />
                           <Textarea
                             name="massage"
                             placeholder="Enter Your Massage"
                             rows="10"
                             className="text-area"
+                            bg={state ? "#051523" : "white"}
+                            color={state ? "red" : "blue.400"}
                           ></Textarea>
                           <button
                             className="form-btn"
                             style={{
-                              background: "#0D1C2E",
-                              color: "#b1977c",
+                              background: state ? "#0D1C2E" : "white",
+                              color: state ? "#b1977c" : "red",
                               border: "1px solid #0D74FF",
+
                               borderRadius: "5px",
                               padding: "10px",
                               margin: "auto",
