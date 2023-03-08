@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/static/css/main.a2ad77e9.css",
-    "main.js": "/static/js/main.cca3a206.js",
+    "main.js": "/static/js/main.6a3ad323.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/angelplace.png": "/static/media/angelplace.0406a33534f0967d63c5.png",
     "static/media/img1.png": "/static/media/img1.f446100d3553af1b6ff5.png",
     "static/media/medease.png": "/static/media/medease.f446100d3553af1b6ff5.png",
     "static/media/nordstorm.png": "/static/media/nordstorm.0b3fad9d81d84f71bfd4.png",
     "static/media/img3.png": "/static/media/img3.1c875d3f579d5dca7ce9.png",
+    "static/media/user2.png": "/static/media/user2.39e8508b11df116bda97.png",
     "static/media/img2.png": "/static/media/img2.7e358e807dc8d7383254.png",
     "static/media/recutie.png": "/static/media/recutie.646fe6ed8856912d5d29.png",
     "static/media/img4.png": "/static/media/img4.98ce78183456192c4d73.png",
     "static/media/img5.png": "/static/media/img5.85d877936b0da920a349.png",
     "static/media/Manmohan_Jina_resume.pdf": "/static/media/Manmohan_Jina_resume.8565aabde3e27ce20e38.pdf",
-    "static/media/user2.jpg": "/static/media/user2.d45376fde051ddb70a7e.jpg",
     "static/media/logo_2.png": "/static/media/logo_2.ba1a2b4694ea7f39d95b.png",
     "static/media/logo1.png": "/static/media/logo1.e323fa0176d37617deb9.png",
     "static/media/thunder.png": "/static/media/thunder.e7f89c51cacb4fb9c726.png",
     "index.html": "/index.html",
     "main.a2ad77e9.css.map": "/static/css/main.a2ad77e9.css.map",
-    "main.cca3a206.js.map": "/static/js/main.cca3a206.js.map",
+    "main.6a3ad323.js.map": "/static/js/main.6a3ad323.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2ad77e9.css",
-    "static/js/main.cca3a206.js"
+    "static/js/main.6a3ad323.js"
   ]
 }
