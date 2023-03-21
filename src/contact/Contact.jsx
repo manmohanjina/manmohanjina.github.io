@@ -16,6 +16,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  Divider,
 } from "@chakra-ui/react";
 import {
   MdPhone,
@@ -242,6 +243,25 @@ export default function Contact() {
           </Box>
         </Flex>
       </Container>
+      <Box
+        p={{ base: 5, md: 10, lg: 4 }}
+        display="flex"
+        flexDirection={"column"}
+        justifyContent="center"
+        alignItems={"center"}
+        gap={{ base: "5px", md: "0px", lg: "15px" }}
+        mb={10}
+      >
+        <Text
+          fontSize={{ base: "20px", md: "xl", lg: "2xl" }}
+          as="i"
+          alignItems={"center"}
+          color={state ? "red" : "white"}
+        >
+          © 2023 design & built by Manmohan Singh Jina
+        </Text>
+        <Divider color={"white"} />
+      </Box>
     </Box>
   );
 }

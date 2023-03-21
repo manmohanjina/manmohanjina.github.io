@@ -28,7 +28,7 @@ import giticon from "../img/giticon.png";
 import tailwind from "../img/tailwind.png";
 import vscode from "../img/vscode.jpeg";
 import "./intro.css";
-import resume from "../resume/Manmohan_Jina_resume.pdf";
+import fw18_0455_Manmohan_singh_jina_resume from "../resume/fw18_0455_Manmohan_jina_resume.pdf";
 import { useEffect, useRef } from "react";
 import { booleanContext } from "../context/Boolean";
 import { useContext } from "react";
@@ -77,7 +77,7 @@ export default function Intro() {
     timerRef.current && clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/10rR7sbEEF9vfghU_8mRlxfjMMxVNEGBJ/view?usp=sharing"
+        "https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing"
       );
     }, 2000);
   };
@@ -157,7 +157,7 @@ export default function Intro() {
         </div>
 
         <Box bg={state ? "#051523" : "#79a7d3"} textAlign="center" mt="-1px">
-          <a href={resume} download>
+          <a href={fw18_0455_Manmohan_singh_jina_resume} download={"fw18_0455_Manmohan_singh_jina_resume"}>
             {" "}
             <Button
               onClick={hadnelPdf}

@@ -14,7 +14,7 @@ import { useState } from "react";
 import logo1 from "../img/logo1.png";
 import logo_2 from "../img/logo_2.png";
 import { Link } from "react-scroll";
-import Manmohan_Jina_resume from "../resume/Manmohan_Jina_resume.pdf";
+import fw18_0455_Manmohan_singh_jina_resume from "../resume/fw18_0455_Manmohan_jina_resume.pdf";
 import { booleanContext } from "../context/Boolean";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
@@ -64,7 +64,7 @@ export default function Navbar() {
     timerRef.current && clearTimeout(timerRef.current);
 
     timerRef.current = setTimeout(() => {
-      window.open("https://drive.google.com/file/d/11Xl7eEzYIBwgvGdBo1-nnR0otZhcCsvi/view?usp=sharing");
+      window.open("https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing");
     }, 2000);
   };
 
@@ -180,7 +180,7 @@ export default function Navbar() {
             </Button>
           </Link>
 
-          <a href={Manmohan_Jina_resume} download="fw_18_0455_Manmohan_Jina_resume">
+          <a href={fw18_0455_Manmohan_singh_jina_resume} download="fw18_0455_Manmohan_singh_jina_resume" target={"_blank"} >
             {" "}
             <Button
               fontSize={"md"}

@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Box, Center, useMediaQuery } from "@chakra-ui/react";
+import { Box, Center, Divider, useMediaQuery } from "@chakra-ui/react";
 
 import NavbarMobile from "./NavbarMobile/NavbarMobile";
 
@@ -19,13 +19,13 @@ function App() {
       <Box id="about"></Box>
 
       <Box>
-       
         {isSmallerThan800 ? <Navbar /> : <NavbarMobile />}
         <Intro />
 
         <Project />
         <Githubstat />
         <Contact />
+      
       </Box>
     </>
   );

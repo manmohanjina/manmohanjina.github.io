@@ -5,7 +5,7 @@ import { BsFillSunFill, BsMoonStarsFill, BsPersonCircle } from "react-icons/bs";
 import { FcContacts, FcHome } from "react-icons/fc";
 import { GrProjects } from "react-icons/gr";
 import { booleanContext } from "../context/Boolean";
-import Manmohan_Jina_resume from "../resume/Manmohan_Jina_resume.pdf";
+import  fw_18_0455_Manmohan_singh_jina_resume from "../resume/fw18_0455_Manmohan_jina_resume.pdf";
 import "./navmobile.css";
 
 export default function NavbarMobile() {
@@ -35,7 +35,7 @@ export default function NavbarMobile() {
 
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/11Xl7eEzYIBwgvGdBo1-nnR0otZhcCsvi/view?usp=sharing"
+        "https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing"
       );
     }, 2000);
   };
@@ -63,6 +63,7 @@ export default function NavbarMobile() {
 
     { id: 3, el: <FcContacts size={"100%"} /> },
   ];
+
 
   var prevScrollpos = window.pageYOffset;
 
@@ -128,15 +129,9 @@ export default function NavbarMobile() {
             mb="5px"
           >
             {elm.id !== 3 ? (
-              <a  href={elm.id == 0 ? null : a}>
-                {elm.el}
-              </a>
+              <a href={elm.id == 0 ? null : a}>{elm.el}</a>
             ) : (
-              <a
-                
-                href={Manmohan_Jina_resume}
-                download="Manmohan_Jina_resume"
-              >
+              <a href={fw_18_0455_Manmohan_singh_jina_resume} download="fw_18_0455_Manmohan_Jina_resume">
                 {elm.el}
               </a>
             )}
