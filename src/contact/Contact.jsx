@@ -44,8 +44,6 @@ export default function Contact() {
       <Container
         bg={state ? "#051523" : "#6883bc"}
         maxW="full"
-        mt={0}
-        centerContent
         overflow="hidden"
       >
         <Flex className="flex-contact">
@@ -53,12 +51,12 @@ export default function Contact() {
             bg={!state ? "#6883bc" : "#0D1C2E"}
             color="white"
             borderRadius="lg"
-            m={{ sm: 4, md: 16, lg: 10 }}
+            m={{ sm: 4, md: 16, lg: 5 }}
             p={{ sm: 5, md: 5, lg: 16 }}
           >
-            <Box p={4}>
-              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-                <WrapItem>
+            <Box p={4} border={"0px solid teal"}>
+              <Wrap border="0px solid yellow">
+                <WrapItem border="0px solid red">
                   <Box color={state ? "#b1977c" : "black"}>
                     <Heading>Contact</Heading>
                     <Text

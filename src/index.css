@@ -1,16 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:"mona";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:"mona" ,
+  
 }
 .type{
   margin: auto;
@@ -18,8 +16,8 @@ code {
   font-weight:bold;
   font-size: 40px;
   color: #b1977c;
-  font-style: italic;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  font-family:"mona";
 }
 
 .text{

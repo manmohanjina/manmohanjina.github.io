@@ -12,6 +12,7 @@ import {
   Flex,
   useMediaQuery,
 } from "@chakra-ui/react";
+import "../fonts/fonts.css"
 
 import user from "../img/user2.png";
 import redux2 from "../img/redux2.png";
@@ -181,11 +182,11 @@ export default function Intro() {
             MYSELF
           </Heading>
           <Text
-            as={"b"}
+          
             fontSize={{ sm: "xl", base: "md", md: "xl", lg: "3xl" }}
             color={state ? "#B0967B" : "black"}
-            fontFamily={"sans-serif"}
-            id="skill"
+             id="skill"
+             fontFamily={"mona"}
           >
             Full Stack Web Developer skilled in MERN stack who focuses on
             writing clean, elegant and efficient code. I'm a passionate learner
@@ -200,7 +201,7 @@ export default function Intro() {
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           margin="auto"
           width={{ sm: "90%", base: "90%" }}
-          fontWeight={"bold"}
+          
           textAlign="center"
           p={5}
         >

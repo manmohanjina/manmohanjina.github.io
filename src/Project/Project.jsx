@@ -23,24 +23,17 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "./project.css";
 import recutie from "../img/recutie.png";
-import nordstorm from "../img/nordstorm.png";
+
 import medease from "../img/medease.png";
-import angelplace from "../img/angelplace.png";
+import todo from "../img/todo-ss.png";
 import findgitrepo from "../img/findgitrepo.png";
-import react2 from "../img/react2.png";
-import redux2 from "../img/redux2.png";
-import nodejs from "../img/nodejs.png";
-import html from "../img/html.png";
-import chakra from "../img/chakra.jpg";
-import js from "../img/js.jpg";
-import css from "../img/css.png";
-import mongo from "../img/mongo.png";
+
 import "../index.css";
-import BooleanState, { booleanContext } from "../context/Boolean";
+import { booleanContext } from "../context/Boolean";
 import { useContext, useEffect, useState } from "react";
 import { DiGithubBadge, DiHtml5 } from "react-icons/di";
 import { BsFillEyeFill } from "react-icons/bs";
-import { SiCsswizardry, SiJavascript } from "react-icons/si";
+import {  SiJavascript } from "react-icons/si";
 import { TbBrandCss3 } from "react-icons/tb";
 import { DiReact, DiNodejsSmall } from "react-icons/di";
 import { SiMongodb, SiRedux, SiChakraui, SiExpress } from "react-icons/si";
@@ -89,7 +82,7 @@ export default function Project() {
       tag: "react",
     },
     {
-      projectName: "ANGELPLACE",
+      projectName: "MULTI-TENANT-TODO",
       techImg: [
         <DiReact size={"80%"} />,
         <SiMongodb size={"80%"} />,
@@ -98,26 +91,14 @@ export default function Project() {
         <SiRedux size={"80%"} />,
         <SiExpress size={"80%"} />,
       ],
-      projectImg: angelplace,
-      desc: "India has overcome china interm of population, now we are the   world's largest & youngest population,so seeing the Statistics our  coustomer base is already there , and for approching them we have   angleplace website",
-      projectLink: "https://sunny-meerkat-5e4a30.netlify.app/",
+      projectImg: todo,
+      desc: " Develop a comprehensive company to-do list app with features including task organization, live notifications, task assignment, multitenant database, user and admin authentication, data visualization, and more. ",
+      projectLink: "https://multitenancyapp.netlify.app/",
       projectGithub:
-        "https://github.com/Codex-Swapnil1/overconfident-door-5197",
+        "https://github.com/Suvam778781/react_todo_app",
       tag: "fullstack",
     },
-    // {
-    //   projectName: "NORDSTROM",
-    //   techImg: [
-    //     <DiHtml5 size={"40%"} />,
-    //     <TbBrandCss3 size={"40%"} />,
-    //     <SiJavascript size={"40%"} />,
-    //   ],
-    //   projectImg: nordstorm,
-    //   desc: "Clone of Nordstorm we created at very begining of our learning phase , it's an ecommerce website suitable for every age group so they can select clothing for themself or for there loved ones.",
-    //   projectLink: "https://gleaming-lamington-419754.netlify.app/",
-    //   projectGithub: "https://github.com/Devender0014/NordStrom",
-    //   tag: "vanillajs",
-    // },
+    
     {
       projectName: "Find Github repo",
       techImg: [
