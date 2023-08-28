@@ -33,7 +33,7 @@ import { booleanContext } from "../context/Boolean";
 import { useContext, useEffect, useState } from "react";
 import { DiGithubBadge, DiHtml5 } from "react-icons/di";
 import { BsFillEyeFill } from "react-icons/bs";
-import {  SiJavascript } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
 import { TbBrandCss3 } from "react-icons/tb";
 import { DiReact, DiNodejsSmall } from "react-icons/di";
 import { SiMongodb, SiRedux, SiChakraui, SiExpress } from "react-icons/si";
@@ -94,11 +94,10 @@ export default function Project() {
       projectImg: todo,
       desc: " Develop a comprehensive company to-do list app with features including task organization, live notifications, task assignment, multitenant database, user and admin authentication, data visualization, and more. ",
       projectLink: "https://multitenancyapp.netlify.app/",
-      projectGithub:
-        "https://github.com/Suvam778781/react_todo_app",
+      projectGithub: "https://github.com/Suvam778781/react_todo_app",
       tag: "fullstack",
     },
-    
+
     {
       projectName: "Find Github repo",
       techImg: [
@@ -179,6 +178,7 @@ export default function Project() {
         className="project-main-c"
         flexDirection="column"
         bg={state ? "#051523" : "#79a7d3"}
+        maxW={"100vw"}
       >
         <Box id="project" w={{ sm: "100%", base: "80%", md: "100%" }}>
           <Text
@@ -214,6 +214,7 @@ export default function Project() {
                       md: "60px",
                       lg: "70px",
                     }}
+                    id="filter-btn"
                     width={{ base: "50px", sm: "70px", md: "60px", lg: "70px" }}
                     value={elm.value}
                     onClick={() => handelIdsetter(elm.id)}
@@ -221,7 +222,11 @@ export default function Project() {
                   >
                     {elm.ic}
                   </Button>
-                  <Text as="b" fontSize={"xl"} color={state ? "red" : "black"}>
+                  <Text
+                    cursor={"pointer"}
+                    fontSize={"xl"}
+                    color={state ? "red" : "black"}
+                  >
                     {elm.name}
                   </Text>
                 </Flex>
@@ -470,7 +475,6 @@ export default function Project() {
             </Box>
           </Center>
         )}
-      
       </HStack>
     </>
   );

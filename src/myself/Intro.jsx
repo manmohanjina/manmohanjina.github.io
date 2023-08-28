@@ -12,9 +12,10 @@ import {
   Flex,
   useMediaQuery,
 } from "@chakra-ui/react";
-import "../fonts/fonts.css"
+import "../fonts/fonts.css";
+import { Suspense, lazy } from "react";
+// "../img/user2.png";
 
-import user from "../img/user2.png";
 import redux2 from "../img/redux2.png";
 import react from "../img/react2.png";
 import github from "../img/github.png";
@@ -36,8 +37,10 @@ import { useContext } from "react";
 import { RiGithubFill } from "react-icons/ri";
 import { ImLinkedin2 } from "react-icons/im";
 
+
 import Aos from "aos";
 import "aos/dist/aos.css";
+import user from "../img/user2.jpg";
 
 export default function Intro() {
   const { toggle, state } = useContext(booleanContext);
@@ -78,7 +81,7 @@ export default function Intro() {
     timerRef.current && clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing"
+        "https://drive.google.com/file/d/14OPmlBwgIvMJFpKJ6_1GnoaElcE_1kSH/view?usp=sharing"
       );
     }, 2000);
   };
@@ -95,7 +98,7 @@ export default function Intro() {
 
   return (
     <>
-      <Box id="homei" bg={state ? "#051523" : "#79a7d3"} w="100%">
+      <Box id="homei" bg={state ? "#051523" : "#79a7d3"} maxWidth={"100vw"}>
         {isSmaller ? (
           <Flex
             justifyContent={"space-evenly"}
@@ -147,46 +150,63 @@ export default function Intro() {
             p={10}
             borderRadius={5}
           >
-            <Image
-              className="userimg"
-              h={{ base: "250px", md: "300px", lg: "300px" }}
-              mt="20px"
-              borderRadius={"8%"}
-              src={user}
-            />
+            <div className="blur-load" style={{ marginTop: "100px" }}>
+              <Image
+                className="userimg"
+                h={{ base: "250px", md: "300px", lg: "300px" }}
+                mt="20px"
+                borderRadius={"8%"}
+                width={"100%"}
+                alt="user Image"
+                loading="lazy"
+                src={user}
+              />
+            </div>
           </Box>
         </div>
 
-        <Box bg={state ? "#051523" : "#79a7d3"} textAlign="center" mt="-1px">
-          <a href={fw18_0455_Manmohan_singh_jina_resume} download={"fw18_0455_Manmohan_singh_jina_resume"}>
+        <Box
+          bg={state ? "#051523" : "#79a7d3"}
+          textAlign="center"
+          mt="10px"
+          w={{ base: "400px", md: "300px", lg: "40%" }}
+          display={"flex"}
+          padding={"10px"}
+          m={"auto"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          gap="10px"
+        >
+          <a href={fw18_0455_Manmohan_singh_jina_resume}>
             {" "}
             <Button
               onClick={hadnelPdf}
-              margin={"auto"}
-              mb="10px"
               p={5}
               colorScheme={state ? "whiteAlpha" : "blackAlpha"}
               fontWeight={state ? "bold" : "bolder"}
               color={state ? "white" : "#28324B"}
               size="lg"
             >
-              Resume
+              View Resume
             </Button>
+          </a>
+          <a download={"fw18_0455_Manmohan_singh_jina_resume"}>
+            {" "}
+            <Button p={6}>Download resume</Button>
           </a>
         </Box>
       </Box>
 
-      <Box bg={state ? "#051523" : "#79a7d3"} mt={"-10px"} w="100%">
+      <Box bg={state ? "#051523" : "#79a7d3"} mt={"-10px"} maxWidth={"100vw"}>
         <Box className="text" margin="auto" textAlign={"center"} p="5%">
           <Heading mt="10px" color={state ? "red" : "black"} p={5}>
             MYSELF
           </Heading>
           <Text
-          
             fontSize={{ sm: "xl", base: "md", md: "xl", lg: "3xl" }}
             color={state ? "#B0967B" : "black"}
-             id="skill"
-             fontFamily={"mona"}
+            id="skill"
+            fontFamily={"mona"}
           >
             Full Stack Web Developer skilled in MERN stack who focuses on
             writing clean, elegant and efficient code. I'm a passionate learner
@@ -194,6 +214,26 @@ export default function Intro() {
             domains. I love to explore new technologies and leverage them to
             solve real-life problems
           </Text>
+          <Text></Text>
+        </Box>
+        <Box className="text" margin="auto" textAlign={"center"} p="5%">
+          <Heading mt="10px" color={state ? "red" : "black"} p={5}>
+            Professional Summary
+          </Heading>
+          <Text
+            fontSize={{ sm: "xl", base: "md", md: "xl", lg: "3xl" }}
+            color={state ? "#B0967B" : "black"}
+            id="skill"
+            fontFamily={"mona"}
+          >
+            During my tenure at Devriser LLC as a full-stack junior developer
+            from April to July 2023, I gained valuable experience in designing
+            and implementing a multi-tenant database architecture. This enabled
+            efficient data storage and management for multiple clients. I also
+            contributed to frontend development, focusing on user-friendly
+            interfaces and seamless integration with backend functionalities.
+          </Text>
+          <Text></Text>
         </Box>
         <Text
           id="skills"
@@ -201,7 +241,6 @@ export default function Intro() {
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           margin="auto"
           width={{ sm: "90%", base: "90%" }}
-          
           textAlign="center"
           p={5}
         >

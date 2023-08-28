@@ -4,6 +4,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
+  
+}
+
+#container{
+  overflow:hidden ;
 }
 
 code {
@@ -81,22 +86,19 @@ code {
 
 
 
-.nav-menu .active{
-  padding-bottom: 3%;
 
- border-bottom: 3px solid #d8dddc;
-
- 
- 
-}
 .nav-menu .active>Button{
   background: white;
-;
+
+  padding-bottom: 3%;
+
+  border-bottom: 3px solid #d8dddc;
 
 }
 
 .appeartransparent{
-   background:#051523 
+   background:#051523 ;
+   
 
 
 
@@ -104,6 +106,7 @@ code {
 .appearsolid{
   background-color: #051523;
   border-bottom: 5px solid #a48b71;
+
   
 }
 

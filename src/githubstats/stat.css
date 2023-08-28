@@ -3,14 +3,28 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  border: 3px solid #B0967B;
  border-radius: 5%;
- 
+ justify-content: center;
+ align-items: center;
+width: auto;
+overflow: hidden;
+object-fit: contain;
+display: flex;
+gap: 10px;
+
  
  }
- /* .in-stat-box{
-    height: 300px;
-    width: 300px;
-    
- } */
+ 
+
+ .stackStat{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   width: 90%;
+  gap:10px;
+   margin: auto;
+
+   
+ }
+ 
  .stats-box:hover{
     transition: transform 0.2s;
     transform: scale(1.1);
@@ -36,11 +50,24 @@
   }
   
  } */
-
- @media screen and (max-width:900px) {
+ @media screen and (max-width:300px) {
+   
    
    .stackStat{
-      height: 10px;
+   height: 100px;
+   
+   }
+   .stats-box{
+      height: 100px;
+   }
+
+   }
+  
+
+ @media screen and (max-width:900px) {
+  
+   .stackStat{
+      height: 100px;
    }
    .xtream{
      padding: 10px;

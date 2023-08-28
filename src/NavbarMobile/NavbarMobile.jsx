@@ -3,9 +3,10 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiTwotoneFire } from "react-icons/ai";
 import { BsFillSunFill, BsMoonStarsFill, BsPersonCircle } from "react-icons/bs";
 import { FcContacts, FcHome } from "react-icons/fc";
-import { GrProjects } from "react-icons/gr";
+
+import {DiReact} from "react-icons/di"
 import { booleanContext } from "../context/Boolean";
-import  fw_18_0455_Manmohan_singh_jina_resume from "../resume/fw18_0455_Manmohan_jina_resume.pdf";
+import fw_18_0455_Manmohan_singh_jina_resume from "../resume/fw18_0455_Manmohan_jina_resume.pdf";
 import "./navmobile.css";
 
 export default function NavbarMobile() {
@@ -35,7 +36,7 @@ export default function NavbarMobile() {
 
     timerRef.current = setTimeout(() => {
       window.open(
-        "https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing"
+        "https://drive.google.com/file/d/14OPmlBwgIvMJFpKJ6_1GnoaElcE_1kSH/view?usp=sharing"
       );
     }, 2000);
   };
@@ -50,20 +51,31 @@ export default function NavbarMobile() {
     {
       id: 0,
       el: state ? (
-        <BsFillSunFill size={"90%"} />
+        <BsFillSunFill size={"90%"} color={state ? "white" : "black"} />
       ) : (
-        <BsMoonStarsFill size={"90%"} />
+        <BsMoonStarsFill size={"90%"} color={state ? "white" : "black"} />
       ),
     },
 
     { id: 1, el: <FcHome size={"100%"} /> },
-    { id: 2, el: <AiTwotoneFire size={"90%"} /> },
-    { id: 5, el: <GrProjects size={"100%"} /> },
-    { id: 4, el: <BsPersonCircle size={"90%"} /> },
+    {
+      id: 2,
+      el: <AiTwotoneFire size={"90%"} color={state ? "white" : "black"} />,
+    },
+    {
+      id: 5,
+      el: <DiReact size={"100%"} color={state ? "white" : "black"} />,
+    },
+    {
+      id: 4,
+      el: <BsPersonCircle size={"90%"} color={state ? "white" : "black"} />,
+    },
 
-    { id: 3, el: <FcContacts size={"100%"} /> },
+    {
+      id: 3,
+      el: <FcContacts size={"100%"} color={state ? "white" : "black"} />,
+    },
   ];
-
 
   var prevScrollpos = window.pageYOffset;
 
@@ -99,11 +111,15 @@ export default function NavbarMobile() {
 
   return (
     <Box
-      bg={state ? "#B0967B" : "black"}
       w={{ sm: "100%", base: "100%", md: "100%", lg: "100%" }}
       h={{ sm: "90px", md: "80px", base: "50px", lg: "80px" }}
       className="navmobile"
       id="navbar"
+      bgGradient={
+        state
+          ? "linear(to-l,#0D1C2E,blue.700)"
+          : "linear(to-r, #6883BC, blue.100, pink.200)"
+      }
     >
       {iconarr.map((elm) => {
         return (
@@ -118,20 +134,22 @@ export default function NavbarMobile() {
               lg: "60px",
             }}
             display="flex"
-            border="1px solid teal"
             alignItems={"center"}
+            border={"transparent"}
             key={elm.id}
             position="-webkit-sticky"
             onClick={() => handelBtn(elm.id)}
             variant={state ? "solid" : "ghost"}
-            bg={state ? "white" : "blue.100"}
             borderRadius={{ sm: "50%", base: "50%", md: "10%" }}
             mb="5px"
           >
             {elm.id !== 3 ? (
               <a href={elm.id == 0 ? null : a}>{elm.el}</a>
             ) : (
-              <a href={fw_18_0455_Manmohan_singh_jina_resume} download="fw_18_0455_Manmohan_Jina_resume">
+              <a
+                href={fw_18_0455_Manmohan_singh_jina_resume}
+                download="fw_18_0455_Manmohan_Jina_resume"
+              >
                 {elm.el}
               </a>
             )}

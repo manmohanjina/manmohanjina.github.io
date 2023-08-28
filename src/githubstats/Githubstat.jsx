@@ -45,17 +45,17 @@ export default function Githubstat() {
     {
       src: "https://github-readme-streak-stats.herokuapp.com/?user=manmohanjina&",
     },
-    {
-      src: "https://github-readme-stats.vercel.app/api/top-langs?username=manmohanjina&show_icons=true&locale=en&layout=compact0",
-    },
+
     {
       src: "https://github-readme-stats.vercel.app/api?username=manmohanjina&show_icons=true&locale=en",
+    },
+    {
+      src: "https://camo.githubusercontent.com/b3025fe2e56ab1228f307145856a09d30bd113e5970c2367c32a96691e7d47af/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67733f757365726e616d653d6d616e6d6f68616e6a696e612673686f775f69636f6e733d74727565266c6f63616c653d656e266c61796f75743d636f6d70616374",
     },
   ];
 
   return (
     <>
-     
       <Box className="github-stat1" bg={state ? "#04101B" : "#79a7d3"}>
         <Box
           data-aos="flip-up"
@@ -83,15 +83,19 @@ export default function Githubstat() {
             </Highlight>
           </Text>
         </Box>
-        <HStack mt="30px" justifyContent="space-evenly" className="stackStat">
+        <div mt="30px" className="stackStat">
           {githubstats.map((elm) => {
             return (
               <Box key={elm.src} className="stats-box">
-                <Image className="in-stat-box" src={elm.src} />
+                <Image
+                
+                  className="in-stat-box"
+                  src={elm.src}
+                />
               </Box>
             );
           })}
-        </HStack>
+        </div>
 
         <Box
           mt="5%"

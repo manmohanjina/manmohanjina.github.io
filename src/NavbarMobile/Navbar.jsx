@@ -64,7 +64,9 @@ export default function Navbar() {
     timerRef.current && clearTimeout(timerRef.current);
 
     timerRef.current = setTimeout(() => {
-      window.open("https://drive.google.com/file/d/12G_A94d7dMVYmQcVlVoPszhXj0IopJvp/view?usp=sharing");
+      window.open(
+        "https://drive.google.com/file/d/14OPmlBwgIvMJFpKJ6_1GnoaElcE_1kSH/view?usp=sharing"
+      );
     }, 2000);
   };
 
@@ -82,7 +84,7 @@ export default function Navbar() {
       h="80px"
       sx={{
         position: "-webkit-sticky",
-        position: "sticky",
+        position: "fixed",
         top: "0",
       }}
     >
@@ -99,8 +101,9 @@ export default function Navbar() {
           className={click ? "nav-menu active" : "nav-menu"}
           mr="100px"
           gap="2"
+          
         >
-          <button onClick={toggle}>
+          <button  id="hover-bright" onClick={toggle}>
             {state ? (
               <SunIcon boxSize={6} color="orange.300" />
             ) : (
@@ -127,13 +130,7 @@ export default function Navbar() {
             </Button>
           </Link>
 
-          <Link
-            to="skill"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={1000}
-          >
+          <Link to="skill" spy={true} smooth={true} offset={50} duration={1000}>
             <Button
               fontSize={"md"}
               variant={"ghost"}
@@ -160,9 +157,6 @@ export default function Navbar() {
             </Button>
           </Link>
 
-         
-
-
           <Link
             to="contact"
             spy={true}
@@ -180,7 +174,11 @@ export default function Navbar() {
             </Button>
           </Link>
 
-          <a href={fw18_0455_Manmohan_singh_jina_resume} download="fw18_0455_Manmohan_singh_jina_resume" target={"_blank"} >
+          <a
+            href={fw18_0455_Manmohan_singh_jina_resume}
+            download="fw18_0455_Manmohan_singh_jina_resume"
+            target={"_blank"}
+          >
             {" "}
             <Button
               fontSize={"md"}

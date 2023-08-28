@@ -1,6 +1,10 @@
 /* .img{
     
 } */
+
+#homei{
+ min-height: 100vh;
+}
 .map-img{
     border: 1px solid #B0967B;
     border-radius: 20%;
@@ -10,6 +14,19 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
+}
+.userimg{
+  
+  display: block;
+  object-position: center;
+  object-fit: cover;
+}
+.blur-load{
+
+  border-radius: 8%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 /* 
  @media screen and (max-width: 900px) {
