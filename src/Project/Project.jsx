@@ -42,6 +42,11 @@ import { ImStarFull } from "react-icons/im";
 
 import { FaReact } from "react-icons/fa";
 import { GiIceCreamCone } from "react-icons/gi";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiTailwindcss } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+
+import masaiyans from "../img/masaiyans.png";
 
 export default function Project() {
   const [smallerDisplay] = useMediaQuery("(min-width: 400px)");
@@ -52,6 +57,20 @@ export default function Project() {
   const { toggle, state } = useContext(booleanContext);
 
   const projectArr = [
+    {
+      projectName: "MASAIYANS",
+      techImg: [
+        <TbBrandNextjs size={"50%"} />,
+
+        <SiTailwindcss size="50%" />,
+        <SiMysql size={"50%"} />,
+      ],
+      projectImg: masaiyans,
+      desc: " Build your powerful Coustom website with mordern tech stack like next ,react ,mongo ,mysql . A all in one website to offer webdevelopment and app development , with live chat support and blog support with best seo in class.",
+      projectLink: "https://www.masaiyans.com/",
+      projectGithub: "",
+      tag: "react",
+    },
     {
       projectName: "RECRUITEE",
       techImg: [
@@ -147,26 +166,26 @@ export default function Project() {
     {
       name: "all",
       value: "all",
-      ic: <ImStarFull color={state ? "red" : "black"} size="100%" />,
+      ic: <ImStarFull color={state ? "#A48B71" : "black"} size="100%" />,
       id: "all",
     },
     {
       name: "mern",
       value: "fullstack",
-      ic: <SiMongodb color={state ? "red" : "black"} size="100%" />,
+      ic: <SiMongodb color={state ? "#A48B71" : "black"} size="100%" />,
       id: "fullstack",
     },
 
     {
       name: "react",
       value: "react",
-      ic: <FaReact color={state ? "red" : "black"} size={"100%"} />,
+      ic: <FaReact color={state ? "#A48B71" : "black"} size={"100%"} />,
       id: "react",
     },
     {
       name: "vanillajs",
       value: "vanillajs",
-      ic: <GiIceCreamCone color={state ? "red" : "black"} size={"100%"} />,
+      ic: <GiIceCreamCone color={state ? "#A48B71" : "black"} size={"100%"} />,
       id: "vanillajs",
     },
   ];
@@ -225,7 +244,7 @@ export default function Project() {
                   <Text
                     cursor={"pointer"}
                     fontSize={"xl"}
-                    color={state ? "red" : "black"}
+                    color={state ? "#A48B71" : "black"}
                   >
                     {elm.name}
                   </Text>
